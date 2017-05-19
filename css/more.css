@@ -1,0 +1,91 @@
+#More .row{
+	padding-bottom: 2em;
+	border-bottom: 1px dashed #CCCCCC;
+}
+#myCarousel{
+	width: 65%;
+	margin: 10px auto;
+	height: 30em;
+}
+.carousel-inner{
+	height:30em;
+}
+.photograph,.movie,.othertxt{
+	margin: 60px 5px;
+}
+#More p
+{   color: rgba(255,255,255,0.7);
+	font-weight: bold;
+	font-size: medium;
+	line-height: 2em;
+}
+.photograph img{
+	height: 5em;
+}
+.movie img{
+	height: 6em;
+	margin-bottom: 1em;
+}
+
+.moviepaint img{
+margin-top: 2em;
+position: relative;
+}
+.movielist li a{
+	position: absolute;
+	display: block;
+	text-decoration: none;
+	color: #FFF;
+	text-indent: -1200px;
+}
+
+#buda{
+	width: 180px;
+	height: 300px;
+	top: 60px;
+	left: 30px;
+}
+#mier{
+	width: 140px;
+	height: 180px;
+	top:40px;
+	left: 38%;
+}
+#nvhan{
+	width: 200px;
+	height: 200px;
+	top: 35px;
+	right: 18px;
+}
+#jiangg{
+	width: 300px;
+	height: 160px;
+	bottom: 30px;
+	right: 40px;
+}
+.movielist a:hover,
+.movielist a:focus{
+		border: 2px dotted #EF233C;
+}
+.otherimg{
+	float: left;
+	width: 100px;
+	height: 100px;
+}
+.other img{
+	margin-top: 1em;
+	height: 23em;
+}
+.othertxt img{
+	height: 5em;
+	margin-bottom: 1em;
+}
+.mix img{
+height: 5em;
+float: left;
+margin: 2em 1em;
+}
+.mixtxt p{
+	text-align: center;
+    margin-top: 3em;
+}

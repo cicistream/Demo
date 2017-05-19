@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>CiciStream.Blog</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/cssdemo.css" />
+	</head>
+	<body id="Blog">
+		<div class="nav navbar-default ">
+          <div class="navbar-header">
+ 　                 <a href="##" class="navbar-brand">cicistream</a>
+ 　               </div>
+   <ul class="nav nav-pills topnav">
+	<li><a href="index.html">Home</a></li>
+	<li><a class="blog">Blog</a></li>
+	<li><a href="More.html">More</a></li>
+	<li><a href="index.html#contact">Contact</a></li>
+   </ul>
+	</div>
+    <div class="container">
+	  <div class="row">
+		<div id="blog-con" class="col-md-3">
+			<ul class="mainmenu">
+				<li><div class="link">CSS</div></li>
+			<ul class="submenu">
+				<li><a href="#airt1">布局</a></li>
+				<li><a href="#airt2">浮动与定位</a></li>
+				<li class="disabled"><a>块级、行内及盒模型</a></li>
+				<li class="disabled"><a>速记属性</a></li>
+			</ul>
+				<li><div class="link">JavaScript</div></li>
+			<ul class="submenu">
+				<li><a href="#airt3">DOM实用代码段</a></li>
+				<li class="disabled"><a>DOM编程艺术总结</a></li>
+				<li class="disabled"><a>原型链个人解读</a></li>
+			</ul>
+				<li><div class="link">HTML</div></li>
+			<ul class="submenu">
+				<li class="disabled"><a>Bootstrap</a></li>
+			</ul>
+				<li><div class="link">BookList</div></li>
+			<ul class="submenu">
+				<li class="disabled"><a>精通CSS</a></li>
+				<li class="disabled"><a>锋利的JQuery</a></li>
+				<li class="disabled"><a>软件随想录</a></li>
+				<li class="disabled"><a>HTML5程序设计</a></li>
+			</ul>
+			</ul>
+		</div>
+		<div class="col-md-10 col-md-offset-3 blogcontent">
+		<div class="airt" id="airt1">
+			<h3>CSS布局–overflow:hidden的清除效果</h3>
+			<a class="all">了解更多</a>
+         <div class="out"><h4>来自《精通CSS》阅读的思考：</h4>
+         	
+<br />
+            <p>原文使用两列的浮动布局，首先设置两列内容为float，并设置display:inline-block，以此防止IE中双外边距浮动产生的bug，然后在两个浮动元素的父元素应用了overflow:hidden</p></div>  
+        <div class="in">
+        	原文：<blockquote>因为这些元素是浮动的，它们不再在文档流中占据任何空间，这会导致页脚上升。为了避免这种情况，需要对父元素应用溢出方法，从而清理浮动元素。</blockquote>
+         <p>overflow：hidden 的原义是超出的部分要裁掉隐藏 
+当父元素的高度没有显式设置，为默认值height:auto，且只包含浮动元素时，由于float元素脱离文档流，他的高度不计算在父元素中，正常的父元素height应该为0，但是在给父元素加上overflow:hidden后，进行裁剪前，父元素会首先计算height: auto;的真实高度，由于其触发了BFC，需要包含子元素，所以高度不是0，而是子元素高度。根据BFC规则浮动元素不仅没有被剪裁掉，还能达到清除浮动的效果。</p><br />
+<p>详细介绍BFC(Block formatting context)的好文:
+<a>http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html</a>
+</p>
+        </div>
+		</div>
+		<div class="airt" id="airt2">
+			<h3>CSS ——浮动与定位元素</h3>
+			<a class="all">了解更多</a>
+         <div class="out"><h4>来自《CSS权威指南》阅读的思考：</h4>
+         	
+<br />
+            <p>  元素分为正常流和非正常流，非正常流中包含浮动与定位
+     先说定位，定位包含相对定位（relative）、绝对定位（absolute）以及固定定位（fixed）
+    <br /> position属性：static（默认）| relative | absolute | fixed       无继承性</p></div>  
+        <div class="in">
+        	<p>   <strong>相对定位：</strong>
+      position：relative <br />
+     相对定位元素被看做正常流文档的一部分，元素之前的位置保留，可以完全覆盖文档中其他元素
+     相对定位的位置变化是相对于元素之前的原始位置来说的
+     其包含块同正常流<br />
+     他的偏移属性有：top bottom left right  设置的数值是相对于原始位置的<em>边偏移</em></p>
+         <p>     <strong>绝对定位：</strong>
+     position：absolute
+     绝对定位元素会从文档流中删除，不会流入其他元素，元素之前的位置不保留
+     绝对定位的包含块是最近的position值不为static（默认）的祖先元素<br />
+        <ul>
+        	<li>如果这个祖先元素为块级元素，包含块为该元素内边距边界</li>
+            <li>如果这个祖先元素是行内元素，包含块为该元素内容区边界</li>
+            <li>如果没有已定位祖先元素，其包含块为初始包含块</li>
+        </ul>
+     <p>元素绝对定位时会为其后代建立一个包含块。
+     元素相对于包含块边偏移，除了bottom的任意边设置为auto时，定位元素会与改元素原始该边位置相对齐</p></p><br />
+<p>  <strong>固定定位：</strong>
+    position：fixed<br />
+    固定定位类似于绝对定位，其包含块为初始包含块。
+</p>
+<p>再说浮动
+    float属性：left | right | none（默认）
+    浮动元素脱离正常流，其包含块为最近的块级祖先元素
+    浮动元素会生成一个块级框，元素外边距不会被合并</p>
+     <p><strong> 浮动元素规则：</strong></p>
+<ul>
+	<li>1.浮动元素尽量高的放置，但浮动元素的左右边界不能超过其包含块的左右内边界</li>
+	<li>2.浮动元素不会重叠，一个浮动元素的顶端不能比之前所有浮动元素或块级元素的顶端更高</li>
+	<li>3.浮动元素不能超过包含块的的内顶端，但是可以超过下边，若浮动元素与正常流元素冲突：
+	<ul class="child">
+		<li>a: 与行内框冲突，其行框、背景、文字都在浮动元素之上</li>
+		<li>b: 与块框冲突，其边框和背景在浮动元素之下，而内容在之上</li>
+	</ul>
+	</li>
+	<li>4.如果源文档中一个浮动元素之前出现另一个元素，浮动元素的顶端不能比包含该元素的生成框的任何行框更高</li>
+</ul>
+<p> clear 属性: left | right | both<br />
+    clear属性用来避免该元素左右出现浮动元素，根据练习发现，如果想让一个行内元素的左右没有浮动元素，必须将该元素先转化为块级元素，即将clear与display：block组合使用才能真正达到目的</p>
+        </div>
+		</div>
+		<div class="airt" id="airt3">
+			<h3>DOM——实用代码段</h3>
+			<a class="all">了解更多</a>
+			<div class="out"><h4>来自《DOM编程艺术》阅读的思考：</h4>
+				<p>addLoadEvent</p>
+             <pre>
+                 function addLoadEvent(func){ 
+                 var oldonload = window.onload; 
+                 if(typeof window.onload!='function') 
+                {
+                   window.onload = func; 
+                 } 
+                 else 
+                { 
+                   window.onload=function(){ 
+                   oldonload(); 
+               func()} 
+                     } 
+             } </pre>			
+			</div>
+			<div class="in">
+				<p>insertAfter</p>
+				<pre>function insertAfter(newElement,targetElement){ 
+                   var parent = targetElement.parentNode; 
+                   if(parent.lastChild==targetElement) 
+                   parent.appendChild(newElement); 
+                   else 
+                  parent.insertBefore(newElement,targetElement.nextSibling); 
+             } 
+</pre>
+               <p>getNextElement</p>
+               <pre>function getNextElement(node){ 
+                  var nextnode=node.nextSibling; 
+                    if(nextnode.nodeType==1) 
+                      return nextnode; 
+                    if(nextnode.nextSibling) 
+                      return getNextElement(nextnode.Sibling); 
+        } </pre>
+               <p>addClass</p>
+               <pre>function addClass(element,value){ 
+                   if(!element.className){ 
+                         element.className=value; 
+                             } 
+                    else{ 
+                      newClassName=element.className; 
+                      newClassName+=""; 
+                      newClassName+=value; 
+                      element.className=newClassName; 
+                         } 
+                     } </pre>
+			</div>
+		</div>
+	  </div>
+    </div>
+		<div class="CSDN"><p>想了解更多博客内容请到：</p>
+			<a href="http://blog.csdn.net/sinat_31231955">cicistream CSDN</a>
+		</div>
+		<script src="js/jquery-3.2.1.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/blog.js"></script>
+	</body>
+</html>

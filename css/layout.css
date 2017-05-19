@@ -1,0 +1,43 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+ul li{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background-color: #747474;
+}
+div.nav{
+	position: relative;
+}
+.topnav{
+	line-height: 2em;
+    position: absolute;
+    right: 15%;
+}
+.navbar-brand {
+ float: left;
+ height: 50px;
+ padding: 15px 15px;
+ font-size: 18px;
+ line-height: 20px;
+}
+.navbar-brand:hover,
+.navbar-brand:focus {
+ text-decoration: none;
+}
+ul.nav li a{
+	color: #202131;
+	-webkit-transition:all 0.5s ease ;
+	-moz-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+ul.nav li a:hover,
+ul.nav li a:focus{
+	background-color: rgba(192, 192, 192,0.5);
+	color: #286090;
+}
